@@ -72,13 +72,37 @@
 
 ## 安装
 
+### 方式一：官方插件界面（推荐）
+
+打开 Harness 的 **插件** 面板（侧边栏底部「插件」/ **Plugins**），点 **添加插件**（Add plugin）→ **安装第三方插件**，在「包名或地址」（Package name or address）里填入：
+
+```
+dsh-plugin-agent-notifications
+```
+
+然后安装。装完刷新页面。
+
+这条路径同样支持 GitHub 仓库地址和本地目录，所以下面两种写法也能直接粘进同一个输入框。
+
+### 方式二：命令行
+
 ```bash
 dsh plugin --profile web add dsh-plugin-agent-notifications
 ```
 
-装完刷新页面即可。安装会把这个 bundle 登记到当前 profile 的 `package.json` `dsh.profile.bundles`，并按包内 `cordis.patch.yml` 增加一行 `agent-notifications`；不覆盖任何官方组件。
+### 方式三：Git 仓库
 
-开发时也可以直接装本地目录：`dsh plugin --profile web add /绝对路径/dsh-plugins/agent-notifications`。
+```bash
+dsh plugin --profile web add https://github.com/genius-alray/dsh-plugin-agent-notifications
+```
+
+### 方式四：本地目录（开发用）
+
+```bash
+dsh plugin --profile web add /绝对路径/dsh-plugins/agent-notifications
+```
+
+无论哪种方式，安装都会把这个 bundle 登记到当前 profile 的 `package.json` `dsh.profile.bundles`，并按包内 `cordis.patch.yml` 增加一行 `agent-notifications`；不覆盖任何官方组件。
 
 ## 开发
 
