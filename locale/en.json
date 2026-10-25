@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Agent Notifications",
+    "description": "Sends a browser notification with an optional sound when an agent turn finishes, needs your approval or answer, or fails."
+  }
+}

@@ -1,0 +1,4 @@
+# Adds only this plugin's row. No official DSH component is overridden.
+- insert:
+    - id: agent-notifications
+      name: 'dsh-plugin-agent-notifications'

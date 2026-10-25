@@ -1,0 +1,64 @@
+{
+  "name": "dsh-plugin-agent-notifications",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Browser notifications for finished agent turns, pending approvals or questions, and session errors.",
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-session",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-workspace",
+        "@deepseek-ai/dsh-client-ui-primitives"
+      ]
+    }
+  },
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "dsh-web",
+    "browser-notifications",
+    "web-audio"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/genius-alray/dsh-plugin-agent-notifications.git"
+  },
+  "homepage": "https://github.com/genius-alray/dsh-plugin-agent-notifications#readme",
+  "bugs": {
+    "url": "https://github.com/genius-alray/dsh-plugin-agent-notifications/issues"
+  },
+  "engines": {
+    "dsh": ">=0.2.1-rc.2"
+  },
+  "author": "genius-alray",
+  "scripts": {
+    "test": "node --test tests/",
+    "check": "node --check client.js && node --check index.js"
+  }
+}
